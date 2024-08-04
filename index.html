@@ -3,35 +3,41 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Poem AI Generator</title>
+    <title>AI Song Generator</title>
   </head>
   <link rel="stylesheet" href="src/style.css" />
   <body>
-    <header>
-      <h1>AI Poem Generator</h1>
-    </header>
+    <div class="container">
+      <header>
+        <h1>Song Generator</h1>
+      </header>
 
-    <main>
-      <form>
-        <input type="text" placeholder="Enter topic of the poem.." autofocus required />
-        <input type="submit" />
-      </form>
-      <div>
-        POEM WILL BE 
-      </br>
-      HERE
+      <main>
+        <form>
+          <input
+            type="text"
+            placeholder="Enter topic of the poem.."
+            autofocus
+            required
+            class="search-input"
+          />
+          <input type="submit" class="search-button" />
+        </form>
+        <div class="lyrics">
+          Surprise 모두 기립 박수 (hala hala) Suicide squad 현실판에 (hala hala)
+          Frightening, let's get burning now (hala hala) (Hala hala)
+        </div>
+      </main>
 
-      </div>
-    </main>
-
-    <footer>
-      This project was coded by me
-      <a href="https://github.com/FIOdawa">Fadumo Odawa</a> and is open-sourced
-      on<a href="https://github.com/FIOdawa/poem-generator"> Github</a>and is
-      hosted on
-      <a href="https://zesty-heliotrope-35ac01.netlify.app/">Netlify</a>
-    </footer>
-
+      <footer>
+        This project was coded by me
+        <a href="https://github.com/FIOdawa">Fadumo Odawa</a> and is
+        open-sourced on
+        <a href="https://github.com/FIOdawa/poem-generator">Github</a> and is
+        hosted on
+        <a href="https://zesty-heliotrope-35ac01.netlify.app/">Netlify</a>
+      </footer>
+    </div>
     <script src="src/index.js"></script>
   </body>
 </html>

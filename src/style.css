@@ -1,1 +1,51 @@
+body {
+  background-color: rgb(229, 223, 234);
+  font-family: Helvetica, Arial, sans-serif;
+}
 
+.container {
+  margin: 120px auto;
+  max-width: 600px;
+}
+
+h1 {
+  font-weight: 800;
+  text-align: center;
+}
+
+form {
+  margin-bottom: 30px;
+  margin-top: 30px;
+  background-color: white;
+  padding: 26px;
+  border-radius: 12px;
+  display: flex;
+}
+
+.search-input {
+  width: 80%;
+  padding: 12px;
+  border-radius: 40px;
+  font-size: 14px;
+}
+
+.search-button {
+  padding: 12px;
+  font-size: 15px;
+  margin-left: 5px;
+  border-radius: 40px;
+  background-color: rgb(229, 209, 245);
+  color: black;
+}
+
+.lyrics {
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  border-radius: 12px;
+}
+
+footer {
+  text-align: center;
+}
