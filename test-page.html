@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Song Generator</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <link rel="stylesheet" href="src/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Song Generator</h1>
+      </header>
+
+      <main>
+        <form class="song-generator-form">
+          <input
+            type="text"
+            placeholder="Enter topic of the poem.."
+            autofocus
+            required
+            class="search-input"
+            id="user-instruction"
+          />
+          <input type="submit" class="submit-button" />
+        </form>
+        <div class="lyrics"></div>
+      </main>
+
+      <footer>
+        This project was coded by me
+        <a href="https://github.com/FIOdawa">Fadumo Odawa</a> and is
+        open-sourced on
+        <a href="https://github.com/FIOdawa/poem-generator">Github</a> and is
+        hosted on
+        <a href="https://zesty-heliotrope-35ac01.netlify.app/">Netlify</a>
+      </footer>
+    </div>
+    <script>
+      function displaySong(response) {
+        console.log("Generated song");
+        const lyricsElement = document.querySelector(".lyrics");
+        if (lyricsElement) {
+          new Typewriter(lyricsElement, {
+            strings: response.data.answer || "No lyrics available",
+            autoStart: true,
+            delay: 75,
+            cursor: "",
+          });
+        } else {
+          console.error("Lyrics element not found.");
+        }
+      }
+
+      function generateSong(event) {
+        event.preventDefault();
+
+        const instructionsInput = document.querySelector("#user-instruction");
+
+        if (!instructionsInput || !instructionsInput.value.trim()) {
+          console.error("No input provided.");
+          return;
+        }
+
+        const apiKey = "fe210b17f1642aob305t6dda70162c42";
+        const prompt = `User instruction: Generate an Ateez song about ${encodeURIComponent(
+          instructionsInput.value
+        )}`;
+        const context =
+          "You are an Ateez super fan. You know all their songs by lyrics and genre. Your mission is to generate a few lines of their song in basic HTML. Make sure to follow user instruction.";
+
+        const apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${encodeURIComponent(
+          prompt
+        )}&context=${encodeURIComponent(context)}&key=${apiKey}`;
+
+        console.log("Generating song");
+        console.log(`Prompt: ${prompt}`);
+        console.log(`Context: ${context}`);
+
+        axios
+          .get(apiUrl)
+          .then((response) => {
+            if (response.data && response.data.answer) {
+              displaySong(response);
+            } else {
+              console.error("Unexpected API response structure:", response);
+            }
+          })
+          .catch((error) => {
+            console.error("Error generating song:", error);
+          });
+      }
+
+      const songFormElement = document.querySelector(".song-generator-form");
+      if (songFormElement) {
+        songFormElement.addEventListener("submit", generateSong);
+      } else {
+        console.error("Form element not found.");
+      }
+    </script>
+  </body>
+</html>
