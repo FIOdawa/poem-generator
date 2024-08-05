@@ -14,41 +14,96 @@ h1 {
 }
 
 form {
+  display: flex;
+}
+
+.form-container {
   margin-bottom: 30px;
   margin-top: 30px;
   background-color: white;
   padding: 26px;
   border-radius: 12px;
-  display: flex;
 }
 
-.search-input {
+.instruction {
   width: 80%;
-  padding: 12px;
+  padding: 15px;
   border-radius: 40px;
+  color: #74589a;
   font-size: 14px;
+  font-family: "Quicksand", sans-serif;
+  border: 1px solid #6f46a6;
 }
 
 .submit-button {
-  padding: 12px;
+  padding: 12px 20px;
   font-size: 15px;
+  font-family: "Quicksand", sans-serif;
+  border: none;
   margin-left: 5px;
   border-radius: 40px;
-  background-color: rgb(192, 162, 219);
-  color: black;
+  background-color: rgb(184, 137, 224);
+  color: white;
 }
 
-.lyrics {
-  background-color: white;
-  padding: 20px;
-  margin-bottom: 20px;
+form {
+  display: flex;
+}
+
+.form-container {
+  background: #fbfaff;
+  border-radius: 30px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  padding: 30px;
+  margin-bottom: 30px;
+}
+
+.hint {
+  font-size: 12px;
+  margin-top: 5px;
+  margin-left: 15px;
+  opacity: 0.6;
+}
+
+.hidden {
+  display: none;
+}
+
+#song-container {
+  background-color: #fbfaff;
+  border-radius: 30px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   line-height: 1.5;
-  border-left: 5px solid rgb(208, 175, 236);
-  border-radius: 12px;
+  padding: 30px;
+  margin-bottom: 30px;
+  font-size: 15px;
+}
+
+#generating {
+  animation: typing 1s steps(10, end) infinite;
+}
+
+.song-lyrics {
+  padding-bottom: 0;
+}
+
+#disclaimer {
+  font-size: 12px;
+  border-top: 0.5px dashed #6f46a6;
+  opacity: 0.7;
+  padding-top: 20px;
 }
 
 footer {
   text-align: center;
   margin-top: 30px;
-  font-size: 15px;
+  font-size: 14px;
+}
+
+a {
+  text-decoration: none;
+}
+
+#links {
+  text-decoration: underline !important;
 }
