@@ -4,8 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AI Song Generator</title>
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <link rel="stylesheet" href="src/style.css" />
   </head>
-  <link rel="stylesheet" href="src/style.css" />
   <body>
     <div class="container">
       <header>
@@ -13,7 +14,7 @@
       </header>
 
       <main>
-        <form>
+        <form class="song-generator-form">
           <input
             type="text"
             placeholder="Enter topic of the poem.."
@@ -23,10 +24,7 @@
           />
           <input type="submit" class="search-button" />
         </form>
-        <div class="lyrics">
-          Surprise 모두 기립 박수 (hala hala) Suicide squad 현실판에 (hala hala)
-          Frightening, let's get burning now (hala hala) (Hala hala)
-        </div>
+        <div class="lyrics"></div>
       </main>
 
       <footer>
